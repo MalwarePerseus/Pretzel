@@ -1,4 +1,11 @@
-1. Users
+1. Pretzels
+        -> Creating
+            -> Text
+            -> Image
+        -> Delete
+        -> RePretzel (Think of a unique Name)
+
+2. Users
     -> Register
     -> Login
     -> Logout
@@ -9,13 +16,6 @@
     -> Feed
         -> User's Feed only
         -> User + Who they Follow
-
-2. Pretzels
-        -> Creating
-            -> Text
-            -> Image
-        -> Delete
-        -> RePretzel (Think of a unique Name)
 
 3. Following / Followers
 

@@ -16,10 +16,10 @@ Including another URLconf
 from django.conf.urls import url
 from django.urls import path
 from django.contrib import admin
-from pretzels.views import home_view, tweet_detail_view
+from pretzels.views import home_view, pretzel_detail_view
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     path('', home_view),
-    path('tweets/<int:tweet_id>', tweet_detail_view),
+    path('pretzels/<int:pretzel_id>', pretzel_detail_view),
 ]

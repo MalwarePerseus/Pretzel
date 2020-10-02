@@ -4,4 +4,20 @@
 
 <p>Welcome to Pretzels </p>
 
+<script>
+    const xhr = new XMLHttpRequest();
+    const method = 'GET';
+    const url = "/pretzels";
+    const responseType = "json";
+
+    xhr.responseType = responseType;
+    xhr.open(method, url);
+    xhr.onload = () => {
+        const serverResponse = xhr.response;
+        var listedItems = serverResponse.response;
+        console.log(listedItems);
+    }
+    xhr.send();
+
+</script>
 {% endblock content %}

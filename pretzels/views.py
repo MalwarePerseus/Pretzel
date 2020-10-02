@@ -8,6 +8,14 @@ def home_view(request, *args, **kwargs):
     #return HttpResponse("<h1>Home View</h1>")
     return render(request, "pages/index.html", context={}, status=200 )
 
+def pretzel_list_view(request, *args, **kwargs):
+    qs = Pretzels.objects.all()
+    pretzels_list = [{"id" : x.id, "content" : x.content } for x in qs]
+    data = {
+        "response" : pretzels_list
+    }
+    return JsonResponse(data)
+
 def pretzel_detail_view(request, pretzel_id, *args, **kwargs):
 
     data = {

@@ -4,7 +4,14 @@
 
 <p>Welcome to Pretzels </p>
 
+<div id="pretzels">
+    Loading....
+</div>
+
 <script>
+
+    const Pretzels = document.getElementById("pretzels");
+
     const xhr = new XMLHttpRequest();
     const method = 'GET';
     const url = "/pretzels";
@@ -15,7 +22,13 @@
     xhr.onload = () => {
         const serverResponse = xhr.response;
         var listedItems = serverResponse.response;
-        console.log(listedItems);
+        var finalPretzelStr = "";
+        var i;
+        for (i=0; i < listedItems.length; i++){
+            var currentItem = "<h1>" + listedItems[i].id + "</h1>" + "<p>" + listedItems[i].content + "<p>"
+            finalPretzelStr += currentItem;
+        }
+        Pretzels.innerHTML = finalPretzelStr; 
     }
     xhr.send();
 

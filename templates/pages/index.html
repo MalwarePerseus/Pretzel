@@ -11,6 +11,10 @@
 <script>
 
     const Pretzels = document.getElementById("pretzels");
+    function formatPretzelElement(pretzel){
+        formatted = "<div class="pretzel" id='pretzel-"+ pretzel.id +"'>"+"<h1>" + listedItems[i].id + "</h1>" + "<p>" + listedItems[i].content + "<p>"+"</div>";
+        return formatted
+    }
 
     const xhr = new XMLHttpRequest();
     const method = 'GET';
@@ -25,7 +29,8 @@
         var finalPretzelStr = "";
         var i;
         for (i=0; i < listedItems.length; i++){
-            var currentItem = "<h1>" + listedItems[i].id + "</h1>" + "<p>" + listedItems[i].content + "<p>"
+            var PretzelObj = listedItems[i]
+            var currentItem = formatPretzelElement(PretzelObj);
             finalPretzelStr += currentItem;
         }
         Pretzels.innerHTML = finalPretzelStr; 
